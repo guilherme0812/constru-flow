@@ -1685,6 +1685,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/bcrypt@npm:^6":
+  version: 6.0.0
+  resolution: "@types/bcrypt@npm:6.0.0"
+  dependencies:
+    "@types/node": "npm:*"
+  checksum: 10c0/48b66408838f5eb59791da5a77260cef59a5291ce0945f2caa3b5a6158c44b321b684b4aa7dce771852c63271c766cadd587374273451b300377a17015c1d51d
+  languageName: node
+  linkType: hard
+
 "@types/body-parser@npm:*":
   version: 1.19.6
   resolution: "@types/body-parser@npm:1.19.6"
@@ -2781,6 +2790,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"bcrypt@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "bcrypt@npm:6.0.0"
+  dependencies:
+    node-addon-api: "npm:^8.3.0"
+    node-gyp: "npm:latest"
+    node-gyp-build: "npm:^4.8.4"
+  checksum: 10c0/006e69d4b3f0f021051fa9d998a768721a51dde28e7848e3e775ab608ba3476b25fa9262a7082ececbb0d493b0b6ca83673a6f3810b114fe90ec1bc6ae4b35b2
+  languageName: node
+  linkType: hard
+
 "bl@npm:^4.1.0":
   version: 4.1.0
   resolution: "bl@npm:4.1.0"
@@ -3192,11 +3212,13 @@ __metadata:
     "@nestjs/swagger": "npm:^11.4.6"
     "@nestjs/testing": "npm:^11.0.1"
     "@nestjs/typeorm": "npm:^11.0.3"
+    "@types/bcrypt": "npm:^6"
     "@types/express": "npm:^5.0.0"
     "@types/jest": "npm:^30.0.0"
     "@types/node": "npm:^24.0.0"
     "@types/pg": "npm:^8"
     "@types/supertest": "npm:^7.0.0"
+    bcrypt: "npm:^6.0.0"
     class-validator: "npm:^0.15.1"
     eslint: "npm:^9.18.0"
     eslint-config-prettier: "npm:^10.0.1"
@@ -5528,12 +5550,32 @@ __metadata:
   languageName: node
   linkType: hard
 
+"node-addon-api@npm:^8.3.0":
+  version: 8.9.1
+  resolution: "node-addon-api@npm:8.9.1"
+  dependencies:
+    node-gyp: "npm:latest"
+  checksum: 10c0/189160497de690479030b7b2f5641c38ffab8601c2ada6fcb8fe3718baf14af51d651528a49ec58de5dd602ff7858459d13facb71914669106f2c6cc6d9d50a5
+  languageName: node
+  linkType: hard
+
 "node-emoji@npm:1.11.0":
   version: 1.11.0
   resolution: "node-emoji@npm:1.11.0"
   dependencies:
     lodash: "npm:^4.17.21"
   checksum: 10c0/5dac6502dbef087092d041fcc2686d8be61168593b3a9baf964d62652f55a3a9c2277f171b81cccb851ccef33f2d070f45e633fab1fda3264f8e1ae9041c673f
+  languageName: node
+  linkType: hard
+
+"node-gyp-build@npm:^4.8.4":
+  version: 4.8.4
+  resolution: "node-gyp-build@npm:4.8.4"
+  bin:
+    node-gyp-build: bin.js
+    node-gyp-build-optional: optional.js
+    node-gyp-build-test: build-test.js
+  checksum: 10c0/444e189907ece2081fe60e75368784f7782cfddb554b60123743dfb89509df89f1f29c03bbfa16b3a3e0be3f48799a4783f487da6203245fa5bed239ba7407e1
   languageName: node
   linkType: hard
 
