@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: constru_flow_postgres
+    environment:
+      POSTGRES_USER: ${DB_USER:-construflow}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-construflow123}
+      POSTGRES_DB: ${DB_NAME:-construflow}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-talent}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
