@@ -18,11 +18,11 @@ export class UsersService {
 
   update(id: string, body: UpdateUserDto) {}
 
-  activate() {}
+  activate(id: string) {}
 
-  suspend() {}
+  suspend(id: string) {}
 
-  remove() {}
+  remove(id: string) {}
 
   hasPassword() {}
 }
