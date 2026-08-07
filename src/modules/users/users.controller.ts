@@ -15,8 +15,8 @@ export class UserController {
   }
 
   @Get()
-  findOne() {
-    return this.usersService.findOne();
+  findAll() {
+    return this.usersService.findAll();
   }
 
   @Get(":id")
