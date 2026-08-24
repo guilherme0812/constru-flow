@@ -16,8 +16,8 @@ export enum CompanySize {
 }
 
 export enum ProviderType {
-  INDIVIDUAL = "pessoa_fisica",
-  COMPANY = "empresa",
+  INDIVIDUAL = "person",
+  COMPANY = "company",
 }
 
 export enum DocumentType {
