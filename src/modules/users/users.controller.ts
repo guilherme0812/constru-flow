@@ -20,8 +20,8 @@ export class UserController {
   }
 
   @Get(":id")
-  findOneById() {
-    return this.usersService.findOne();
+  findOneById(@Param("id") id: string) {
+    return this.usersService.findOne(id);
   }
 
   @Patch(":id")

@@ -1,3 +1,16 @@
-import { CreateUserDto } from './create-user.dto';
+import { IsEmail, IsEnum, IsOptional, IsString } from "class-validator";
+import { UserType } from "@/common/enums";
 
-export class UpdateUserDto extends CreateUserDto {}
+export class UpdateUserDto {
+  @IsOptional()
+  @IsEnum(UserType)
+  type: UserType;
+
+  @IsOptional()
+  @IsEmail()
+  email: string;
+
+  @IsOptional()
+  @IsString()
+  phone?: string;
+}

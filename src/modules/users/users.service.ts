@@ -49,8 +49,7 @@ export class UsersService {
 
     Object.assign(user, {
       email: body.email ?? user.email,
-      telefone: body.phone ?? user.phone,
-      ...(body.password ? { senhaHash: this.hashPassword(body.password) } : {}),
+      phone: body.phone ?? user.phone,
     });
 
     return this.usersRepo.save(user);
