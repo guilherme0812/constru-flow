@@ -5,7 +5,6 @@ import { Entity, PrimaryColumn, Column, OneToOne, JoinColumn, OneToMany } from "
 
 @Entity("contractors")
 export class Contractor {
-  // A chave primária é também a FK referente ao id do usuário
   @PrimaryColumn("uuid", { name: "user_id" })
   userId: string;
 
