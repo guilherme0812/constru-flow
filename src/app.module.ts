@@ -7,6 +7,7 @@ import { typeOrmConfig } from "./config/typeorm.config";
 import { UserModule } from "./modules/users/users.module";
 import { ProvidersModule } from "./modules/providers/provider.module";
 import { ContractorsModule } from "./modules/contractors/contractors.module";
+import { DemandsModule } from "./modules/demands/demands.module";
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { ContractorsModule } from "./modules/contractors/contractors.module";
     UserModule,
     ProvidersModule,
     ContractorsModule,
+    DemandsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
