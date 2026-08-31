@@ -1,4 +1,4 @@
-import { CompanySize, DemandStatus } from "@/common/enums";
+import { DemandStatus } from "@/common/enums";
 import {
   IsArray,
   IsDateString,
@@ -14,13 +14,7 @@ export class CreateDemandDto {
   contractorId: string;
 
   @IsString()
-  legalName: string;
-
-  @IsString()
   title: string;
-
-  @IsEnum(CompanySize)
-  companySize: CompanySize;
 
   @IsString()
   description: string;

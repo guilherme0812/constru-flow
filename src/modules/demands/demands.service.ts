@@ -25,6 +25,7 @@ export class DemandsService {
       title: dto.title,
       status: dto.status,
       applications: [],
+      worksiteLocation: dto.worksiteLocation,
     });
 
     return this.demandsRepo.save(demand);

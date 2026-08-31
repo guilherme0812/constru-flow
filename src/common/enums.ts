@@ -4,9 +4,9 @@ export enum UserType {
 }
 
 export enum UserStatus {
-  PENDING_VERIFICATION = "pendente_verificacao",
-  ACTIVE = "ativo",
-  SUSPENDED = "suspenso",
+  PENDING_VERIFICATION = "peding_verification",
+  ACTIVE = "active",
+  SUSPENDED = "suspended",
 }
 
 export enum CompanySize {
@@ -31,38 +31,38 @@ export enum DocumentType {
 }
 
 export enum DocumentValidationStatus {
-  PENDING = "pendente",
-  APPROVED = "aprovado",
-  REJECTED = "rejeitado",
+  PENDING = "pending",
+  APPROVED = "approved",
+  REJECTED = "rejected",
 }
 
 export enum DemandStatus {
-  DRAFT = "rascunho",
-  PUBLISHED = "publicada",
-  UNDER_REVIEW = "em_analise",
-  AWARDED = "adjudicada",
-  CANCELLED = "cancelada",
-  COMPLETED = "concluida",
+  DRAFT = "draft",
+  PUBLISHED = "published",
+  UNDER_REVIEW = "under_review",
+  AWARDED = "awared",
+  CANCELLED = "cancelled",
+  COMPLETED = "completed",
 }
 
 export enum ApplicationStatus {
-  SENT = "enviada",
-  UNDER_REVIEW = "em_analise",
-  ACCEPTED = "aceita",
-  REJECTED = "recusada",
-  WITHDRAWN = "retirada",
+  SENT = "sent",
+  UNDER_REVIEW = "under_review",
+  ACCEPTED = "accepted",
+  REJECTED = "rejected",
+  WITHDRAWN = "withdrawn",
 }
 
 export enum ContractExecutionStatus {
-  NOT_STARTED = "nao_iniciado",
-  IN_PROGRESS = "em_andamento",
-  COMPLETED = "concluido",
-  CANCELLED = "cancelado",
+  NOT_STARTED = "not_started",
+  IN_PROGRESS = "in_progress",
+  COMPLETED = "completed",
+  CANCELLED = "cancelled",
 }
 
 export enum NotificationType {
-  NEW_DEMAND = "nova_demanda",
-  NEW_APPLICATION = "nova_candidatura",
-  RESULT = "resultado",
-  EVALUATION_RECEIVED = "avaliacao_recebida",
+  NEW_DEMAND = "new_demand",
+  NEW_APPLICATION = "new_application",
+  RESULT = "result",
+  EVALUATION_RECEIVED = "evaluation_received",
 }
