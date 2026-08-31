@@ -8,6 +8,7 @@ import { UserModule } from "./modules/users/users.module";
 import { ProvidersModule } from "./modules/providers/provider.module";
 import { ContractorsModule } from "./modules/contractors/contractors.module";
 import { DemandsModule } from "./modules/demands/demands.module";
+import { CategoriesModule } from "./modules/categories/category.module";
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { DemandsModule } from "./modules/demands/demands.module";
     ProvidersModule,
     ContractorsModule,
     DemandsModule,
+    CategoriesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
