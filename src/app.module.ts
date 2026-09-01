@@ -12,6 +12,7 @@ import { CategoriesModule } from "./modules/categories/category.module";
 import { ApplicationsModule } from "./modules/applications/application.module";
 import { ContractsModule } from "./modules/contracts/contract.module";
 import { EvaluationsModule } from "./modules/evaluations/evalution.module";
+import { AuthModule } from "./modules/auth/auth.module";
 
 @Module({
   imports: [
@@ -21,7 +22,7 @@ import { EvaluationsModule } from "./modules/evaluations/evalution.module";
       inject: [ConfigService],
       useFactory: typeOrmConfig,
     }),
-
+    AuthModule,
     UserModule,
     ProvidersModule,
     ContractorsModule,
