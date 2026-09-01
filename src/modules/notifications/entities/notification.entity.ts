@@ -1,25 +1,20 @@
-import { NotificationType } from '@/common/enums';
-import {
-    Entity,
-    PrimaryGeneratedColumn,
-    Column,
-    CreateDateColumn,
-} from 'typeorm';
+import { NotificationType } from "@/common/enums";
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn } from "typeorm";
 
-@Entity('notifications')
+@Entity("notifications")
 export class Notification {
-    @PrimaryGeneratedColumn('uuid')
-    id: string;
+  @PrimaryGeneratedColumn("uuid")
+  id: string;
 
-    @Column({ name: 'user_id' })
-    userId: string;
+  @Column({ name: "user_id" })
+  userId: string;
 
-    @Column({ type: 'enum', enum: NotificationType })
-    type: NotificationType;
+  @Column({ type: "enum", enum: NotificationType })
+  type: NotificationType;
 
-    @Column({ name: 'is_read', default: false })
-    isRead: boolean;
+  @Column({ name: "is_read", default: false })
+  isRead: boolean;
 
-    @CreateDateColumn({ name: 'created_at' })
-    createdAt: Date;
+  @CreateDateColumn({ name: "created_at" })
+  createdAt: Date;
 }
