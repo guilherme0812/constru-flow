@@ -11,6 +11,7 @@ import { DemandsModule } from "./modules/demands/demands.module";
 import { CategoriesModule } from "./modules/categories/category.module";
 import { ApplicationsModule } from "./modules/applications/application.module";
 import { ContractsModule } from "./modules/contracts/contract.module";
+import { EvaluationsModule } from "./modules/evaluations/evalution.module";
 
 @Module({
   imports: [
@@ -28,6 +29,7 @@ import { ContractsModule } from "./modules/contracts/contract.module";
     CategoriesModule,
     ApplicationsModule,
     ContractsModule,
+    EvaluationsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
