@@ -10,6 +10,7 @@ import { ContractorsModule } from "./modules/contractors/contractors.module";
 import { DemandsModule } from "./modules/demands/demands.module";
 import { CategoriesModule } from "./modules/categories/category.module";
 import { ApplicationsModule } from "./modules/applications/application.module";
+import { ContractsModule } from "./modules/contracts/contract.module";
 
 @Module({
   imports: [
@@ -26,6 +27,7 @@ import { ApplicationsModule } from "./modules/applications/application.module";
     DemandsModule,
     CategoriesModule,
     ApplicationsModule,
+    ContractsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
