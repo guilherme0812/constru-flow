@@ -25,6 +25,8 @@ export class AuthService {
     const user = await this.userRepository
       .createQueryBuilder("users")
       .addSelect("users.passwordHash")
+      .leftJoinAndSelect("users.contractor", "contractor")
+      .leftJoinAndSelect("users.provider", "provider")
       .where("users.email = :email", { email })
       .getOne();
 
@@ -35,6 +37,7 @@ export class AuthService {
     if (!user || !(await this.comparePassword(password, user.passwordHash))) {
       throw new Error("Invalid credentials");
     }
+
     return this.signToken(user);
   }
 
@@ -42,6 +45,21 @@ export class AuthService {
     const user = await this.userRepository.findOneBy({ id: payload.sub });
     if (!user) throw new UnauthorizedException();
     return user;
+  }
+  async getCompleteUserData(userId: string): Promise<User> {
+    const userData = await this.userRepository.findOne({
+      where: { id: userId },
+      relations: {
+        contractor: true,
+        provider: true,
+      },
+    });
+
+    if (!userData) {
+      throw new UnauthorizedException("Usuário não encontrado");
+    }
+
+    return userData;
   }
 
   private async comparePassword(plain: string, password: string): Promise<boolean> {
@@ -52,12 +70,13 @@ export class AuthService {
     const payload: JwtPayload = {
       sub: user.id,
       email: user.email,
-      //   role: user.role,
     };
+
+    const { passwordHash, ...userWithoutPassword } = user;
 
     return {
       accessToken: this.jwtService.sign(payload),
-      user: { id: user.id, email: user.email, status: user.status, type: user.type },
+      user: userWithoutPassword,
     };
   }
 }

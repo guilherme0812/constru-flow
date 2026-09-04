@@ -32,11 +32,22 @@ export class DemandsService {
   }
 
   findAll(): Promise<Demand[]> {
-    return this.demandsRepo.find();
+    return this.demandsRepo
+      .createQueryBuilder("demand")
+      .leftJoin("demand.category", "category")
+      .addSelect("category.name")
+      .getMany();
   }
 
   async findOne(id: string): Promise<Demand | null> {
-    return this.demandsRepo.findOne({ where: { id } });
+    return this.demandsRepo
+      .createQueryBuilder("demand")
+      .leftJoinAndSelect("demand.contractor", "contractor")
+      .leftJoin("demand.category", "category")
+      .leftJoinAndSelect("demand.applications", "applications")
+      .where("demand.id = :id", { id })
+      .select(["demand", "contractor", "applications", "category.id", "category.name"])
+      .getOne();
   }
 
   async update(id: string, body: any) {
