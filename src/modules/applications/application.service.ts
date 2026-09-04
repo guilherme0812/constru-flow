@@ -4,6 +4,7 @@ import { CreateApplicationDto } from "./dto/create-application.dto";
 import { ConflictException } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { ChangeStatusApplicationDto } from "./dto/change-status-application.dto";
+import { GetApplicationsParamsDto } from "./dto/get-applications.dto";
 
 export class ApplicationsService {
   constructor(
@@ -42,8 +43,33 @@ export class ApplicationsService {
     return this.applicationsRepository.save(application);
   }
 
-  findAll(): Promise<Application[]> {
-    return this.applicationsRepository.find();
+  findAll(params: GetApplicationsParamsDto): Promise<Application[]> {
+    return this.applicationsRepository.find({
+      select: {
+        id: true,
+        proposedAmount: true,
+        termsAndConditions: true,
+        status: true,
+        proposedDurationDays: true,
+        createdAt: true,
+      },
+      relations: {
+        demand: {
+          contractor: true,
+          category: true,
+        },
+        provider: true,
+      },
+      ...(params
+        ? {
+            where: {
+              ...(params.demandId ? { demandId: params.demandId } : {}),
+              ...(params.providerId ? { providerId: params.providerId } : {}),
+              ...(params.contractorId ? { contractorId: params.contractorId } : {}),
+            },
+          }
+        : {}),
+    });
   }
 
   async findOne(id: string): Promise<Application | null> {

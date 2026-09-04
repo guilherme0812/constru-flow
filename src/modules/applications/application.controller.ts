@@ -1,7 +1,8 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post } from "@nestjs/common";
+import { Body, Controller, Delete, Get, Param, Patch, Post, Query } from "@nestjs/common";
 import { ApplicationsService } from "./application.service";
 import { CreateApplicationDto } from "./dto/create-application.dto";
 import { ChangeStatusApplicationDto } from "./dto/change-status-application.dto";
+import { GetApplicationsParamsDto } from "./dto/get-applications.dto";
 
 @Controller("applications")
 export class ApplicationsController {
@@ -18,8 +19,8 @@ export class ApplicationsController {
   }
 
   @Get()
-  findAll() {
-    return this.applicationsService.findAll();
+  findAll(@Query() params: GetApplicationsParamsDto) {
+    return this.applicationsService.findAll(params);
   }
 
   @Get(":id")
